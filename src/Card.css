@@ -1,0 +1,39 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    top: 50px;
+    position: relative;
+    margin-bottom: 48px;
+    background: #fff;
+    border-radius: 21px;
+    text-align: center;
+    transition: ease all .4s;
+    opacity: 1;
+    box-shadow: 0 10px 20px -10px rgba(162,121,0,.3);
+    width: calc(100vw - 96px);
+    max-width: 360px;
+    max-height: calc(100vh - 100px - 98px - 66px - 20px);
+    height: calc(130vw - 96px);
+    background-color: white;
+    cursor: pointer;
+    user-select: none;
+    z-index: 5;
+    font-size: 30px;
+}
+
+.left-top-card {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.right-bottom-card {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    transform: scale(-1);
+}
