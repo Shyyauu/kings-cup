@@ -10,7 +10,6 @@ export default function Card() {
   const [suit, setSuit] = useState('')
   const [isClicked, setIsClicked] = useState(false)
 
-
   const cards = {
     type: [2, 3, 4, 5, 6, 7, 8, 9, 10, 'J', 'Q', 'K', 'A', "Joker"],
     suit: ['clubs', 'diamonds', 'hearts', 'spades'],

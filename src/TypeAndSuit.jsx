@@ -3,31 +3,31 @@ import { faSnowflake, faCannabis, faDiamond, faHeart, faFaceGrinTongueWink } fro
 
 
 export default function TypeAndSuit(props) {
-
+  const { cardType, cardSuit } = props
   return (
     <>
     <div style=
       {
         {
-          fontSize: props.cardType == 'Joker' ? '30px' : '',
-          color: props.cardSuit == 'hearts' || props.cardSuit == 'diamonds' ? 'red' : 'black'
+          fontSize: cardType == 'Joker' ? '30px' : '',
+          color: cardSuit == 'hearts' || cardSuit == 'diamonds' ? 'red' : 'black'
         }
         
       }
     >
       <div>
         {
-            props.cardType == 'Joker' ? '' : props.cardType
+            cardType == 'Joker' ? '' : cardType
         }
       </div>
       <div>
         {
 
-            props.cardType == 'Joker' ? <FontAwesomeIcon icon={faFaceGrinTongueWink} /> :
-            props.cardSuit == '' ? '' :
-            props.cardSuit == 'clubs' ? <FontAwesomeIcon icon={faSnowflake}/> : 
-            props.cardSuit == 'diamonds' ? <FontAwesomeIcon icon={faDiamond}/> : 
-            props.cardSuit == 'hearts' ? <FontAwesomeIcon icon={faHeart}/> : 
+            cardType == 'Joker' ? <FontAwesomeIcon icon={faFaceGrinTongueWink} /> :
+            cardSuit == '' ? '' :
+            cardSuit == 'clubs' ? <FontAwesomeIcon icon={faSnowflake}/> : 
+            cardSuit == 'diamonds' ? <FontAwesomeIcon icon={faDiamond}/> : 
+            cardSuit == 'hearts' ? <FontAwesomeIcon icon={faHeart}/> : 
             <FontAwesomeIcon icon={faCannabis}/>  
         }
         </div>

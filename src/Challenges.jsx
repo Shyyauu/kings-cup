@@ -8,9 +8,9 @@ export default function Challenges(props) {
     const [rule, setRule] = useState('Place a cup in the middle of the table and click START')
     const [isKing, setIsKing] = useState() // hmmmmmmm
     
+    const { cardType , isClicked } = props
+    
     function handleRules() {
-
-        const { cardType } = props
 
         if (cardType === 2) {
             setRuleTitle('You')
@@ -55,12 +55,11 @@ export default function Challenges(props) {
             setRuleTitle(`King's Cup`)
             setRule('Set a rule to be followed, e.g. stand on one foot when you drink, only speak in an accent, etc.')
         }
-
     }
 
     useEffect(() => {
         handleRules()
-      }, [props.isClicked])
+      }, [isClicked])
 
   return (
     <>
