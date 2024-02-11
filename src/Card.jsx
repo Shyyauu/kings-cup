@@ -1,6 +1,6 @@
 import { useState } from 'react'
-import CardType from './CardType'
-import CardSuit from './CardSuit'
+import TypeAndSuit from './TypeAndSuit'
+import Challenges from './Challenges'
 
 import './Card.css'
 
@@ -8,6 +8,8 @@ export default function Card() {
 
   const [type, setType] = useState('')
   const [suit, setSuit] = useState('')
+  const [isClicked, setIsClicked] = useState(false)
+
 
   const cards = {
     type: [2, 3, 4, 5, 6, 7, 8, 9, 10, 'J', 'Q', 'K', 'A', "Joker"],
@@ -17,7 +19,9 @@ export default function Card() {
     function randomCard() {
         setType(cards.type[Math.floor(Math.random() * (cards.type.length))])
         setSuit(cards.suit[Math.floor(Math.random() * (cards.suit.length))])
+        setIsClicked(prevState => !prevState)
       }
+      console.log(isClicked)
 
   return (
     <>
@@ -25,27 +29,27 @@ export default function Card() {
             <div className="card-deck">
                 <div className="card" onClick={() => randomCard()}>
                     <div className="left-top-card">
-                        <CardType 
+                        <TypeAndSuit 
                             cardSuit={suit} 
+                            cardType={type} />
+                    </div>
+
+                    <div className="main-card-text">
+                        <Challenges 
                             cardType={type} 
-                        />
-                        <CardSuit 
-                            cardSuit={suit} 
-                            cardType={type} 
-                        />
+                            isClicked={isClicked}/>
                     </div>
 
                     <div className="right-bottom-card">
-                    <CardType 
-                            cardSuit={suit} 
-                            cardType={type} 
-                        />
-                        <CardSuit 
-                            cardSuit={suit} 
-                            cardType={type} 
-                        />
+                        <TypeAndSuit 
+                                cardSuit={suit} 
+                                cardType={type} />
                     </div>
+
                 </div>
+                    <button onClick={() => randomCard()}>
+                        {suit != '' && type != '' ? 'NEXT CARD' : 'START'}
+                    </button>
             </div>
         </div>
     </>

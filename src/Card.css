@@ -7,7 +7,7 @@
 .card {
     top: 50px;
     position: relative;
-    margin-bottom: 48px;
+    margin-bottom: 148px;
     background: #fff;
     border-radius: 21px;
     text-align: center;
@@ -23,6 +23,7 @@
     user-select: none;
     z-index: 5;
     font-size: 30px;
+    overflow: hidden;
 }
 
 .left-top-card {
@@ -36,4 +37,28 @@
     bottom: 10px;
     right: 10px;
     transform: scale(-1);
+}
+
+.main-card-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button {
+    display: flex;
+    height: 50px;
+    line-height: 50px;
+    font-weight: 700;
+    padding: 0 48px;
+    font-size: 22px;
+    color: #fff;
+    background: #ff0034;
+    box-shadow: 0 8px 16px -4px rgba(212,0,43,.5);
+    border-radius: 999px;
+    margin: 24px auto;
+    transition: all ease .25s;
+    transform: scale(1);
+    cursor: pointer;
+    border: none;
 }

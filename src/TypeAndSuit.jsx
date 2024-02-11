@@ -2,7 +2,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSnowflake, faCannabis, faDiamond, faHeart, faFaceGrinTongueWink } from '@fortawesome/free-solid-svg-icons'
 
 
-export default function CardSuit(props) {
+export default function TypeAndSuit(props) {
 
   return (
     <>
@@ -15,6 +15,12 @@ export default function CardSuit(props) {
         
       }
     >
+      <div>
+        {
+            props.cardType == 'Joker' ? '' : props.cardType
+        }
+      </div>
+      <div>
         {
 
             props.cardType == 'Joker' ? <FontAwesomeIcon icon={faFaceGrinTongueWink} /> :
@@ -24,6 +30,7 @@ export default function CardSuit(props) {
             props.cardSuit == 'hearts' ? <FontAwesomeIcon icon={faHeart}/> : 
             <FontAwesomeIcon icon={faCannabis}/>  
         }
+        </div>
     </div>
     </>
   )

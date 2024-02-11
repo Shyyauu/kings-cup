@@ -1,7 +1,5 @@
 import Card from './Card'
 
-import './CardDeck.css'
-
 function CardDeck() {
 
   return (
