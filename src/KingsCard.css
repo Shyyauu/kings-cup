@@ -1,0 +1,46 @@
+.kings-card-deck {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    top: 100px;
+    left: 80px;
+}
+
+.kings-card {
+    rotate: -10deg;
+}
+
+.king {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 80px;
+    height: 120px;
+    margin-bottom: 1px;
+    background-color: green;
+    background: #fff;
+    border-radius: 8px;
+    text-align: center;
+    transition: ease all .4s;
+    opacity: 1;
+    box-shadow: 0 10px 20px -10px rgba(162,121,0,.3);
+    background-color: white;
+    user-select: none;
+    font-size: 30px;
+    overflow: hidden;
+    z-index: 5;
+}
+
+@media (max-width:450px) {
+    .kings-card-deck {
+        position: relative;
+        top: 10px;
+        left: 30px;
+
+    }
+
+    .kings-card{
+        display: flex;
+    }
+  }

@@ -13,11 +13,11 @@
     text-align: center;
     transition: ease all .4s;
     opacity: 1;
-    box-shadow: 0 10px 20px -10px rgba(162,121,0,.3);
+    box-shadow: 0 20px 30px 10px rgba(26, 21, 7, 0.3);
     width: calc(100vw - 96px);
     max-width: 360px;
     max-height: calc(100vh - 100px - 98px - 66px - 20px);
-    height: calc(130vw - 96px);
+    height: calc(100vw);
     background-color: white;
     cursor: pointer;
     user-select: none;
