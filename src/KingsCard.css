@@ -1,46 +1,81 @@
 .kings-card-deck {
     position: absolute;
-    width: 300px;
-    height: 300px;
-    top: 100px;
-    left: 80px;
-}
-
-.kings-card {
-    rotate: -10deg;
+    left: 20%;
+    top: 10%;
 }
 
 .king {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    width: 80px;
-    height: 120px;
-    margin-bottom: 1px;
-    background-color: green;
-    background: #fff;
-    border-radius: 8px;
-    text-align: center;
-    transition: ease all .4s;
-    opacity: 1;
-    box-shadow: 0 10px 20px -10px rgba(162,121,0,.3);
-    background-color: white;
-    user-select: none;
-    font-size: 30px;
-    overflow: hidden;
-    z-index: 5;
+    position: relative;
+    animation: slideToLeft 0.5s ease-in-out forwards;
 }
 
-@media (max-width:450px) {
-    .kings-card-deck {
-        position: relative;
-        top: 10px;
-        left: 30px;
 
+@keyframes slideToLeft {
+    0% {
+        top: 10px;
+        left: 150px;
+        position: relative;
+        background: #fff;
+        border-radius: 21px;
+        box-shadow: 0 20px 30px 10px rgba(26, 21, 7, 0.3);
+        width: 240px;
+        height: 320px;
+        cursor: pointer;
+        user-select: none;
+        overflow: hidden;
+    }
+    100% {
+        top: 40px;
+        width: 80px;
+        height: 120px;
+        margin-bottom: 1px;
+        background: #fff;
+        border-radius: 8px;
+        text-align: center;
+        box-shadow: 0 10px 20px -10px rgba(162,121,0,.3);
+        user-select: none;
+        font-size: 30px;
+        overflow: hidden;
+    }
+}
+
+
+@media (max-width:450px) {
+
+    @keyframes slideToLeft {
+        0% {
+            top: 50px;
+            position: relative;
+            background: #fff;
+            border-radius: 21px;
+            box-shadow: 0 20px 30px 10px rgba(26, 21, 7, 0.3);
+            width: 240px;
+            height: 320px;
+            cursor: pointer;
+            user-select: none;
+            overflow: hidden;
+        }
+        100% {
+            top: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            width: 80px;
+            height: 120px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 10px 20px -10px rgba(162,121,0,.3);
+            user-select: none;
+            font-size: 30px;
+            overflow: hidden;
+        }
     }
 
-    .kings-card{
+    .kings-card {
+        height: 75vh;
         display: flex;
+        justify-content: center;
+        align-items: flex-end;
     }
   }

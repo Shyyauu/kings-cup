@@ -23,13 +23,13 @@ function KingsCard(props) {
                             <div className="king-letter">
                                 <span>K</span>
                             </div>
-                            {
-                                king == '' ? '' :
-                                king == 'clubs' ? <FontAwesomeIcon icon={faSnowflake}/> : 
-                                king == 'diamonds' ? <FontAwesomeIcon icon={faDiamond}/> : 
-                                king == 'hearts' ? <FontAwesomeIcon icon={faHeart}/> : 
-                                <FontAwesomeIcon icon={faCannabis}/>  
-                            }
+                            { 
+                                king && (
+                                king === 'clubs' ? <FontAwesomeIcon icon={faSnowflake}/> : 
+                                king === 'diamonds' ? <FontAwesomeIcon icon={faDiamond}/> : 
+                                king === 'hearts' ? <FontAwesomeIcon icon={faHeart}/> : 
+                                <FontAwesomeIcon icon={faCannabis}/>
+                            )}
 
                         </div>
 

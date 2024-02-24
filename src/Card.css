@@ -24,7 +24,13 @@
     z-index: 5;
     font-size: 30px;
     overflow: hidden;
+    transition: transform 0.5s ease-in-out scale 0.5s ease-in-out;
 }
+
+button:hover {
+    transform: scale(1.1);
+} 
+
 
 .left-top-card {
     position: absolute;
@@ -61,4 +67,8 @@ button {
     transform: scale(1);
     cursor: pointer;
     border: none;
+}
+
+.card:active {
+    scale: 1.1;
 }

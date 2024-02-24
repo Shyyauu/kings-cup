@@ -1,6 +1,7 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import TypeAndSuit from './TypeAndSuit'
 import Challenges from './Challenges'
+import NewGame from './NewGame'
 
 import './Card.css'
 
@@ -10,6 +11,7 @@ export default function Card(props) {
   const [suit, setSuit] = useState('')
   const [kings, setKings] = useState([])
   const [isClicked, setIsClicked] = useState(false)
+  const [mounted, setMounted] = useState(false)
   const { checkIsKing } = props
  
   const cards = {
@@ -17,11 +19,12 @@ export default function Card(props) {
     suit: ['clubs', 'diamonds', 'hearts', 'spades'],
   }
 
+
   function randomCard() {
     if (kings.length === 4) {
         console.log('gameover')
         console.log(kings)
-        return
+        return 
     }
 
         let cardType = cards.type[Math.floor(Math.random() * (cards.type.length))]
@@ -46,8 +49,15 @@ export default function Card(props) {
     }
 
 
+    useEffect(() => {
+        if (kings.length === 4) {
+            setTimeout(() => setMounted(true), '2000')
+        }
+    })
+
   return (
     <>
+     {mounted === true && kings.length === 4 ? <NewGame /> : null}
         <div className="container">
             <div className="card-deck">
                 <div className="card" onClick={() => randomCard()}>
